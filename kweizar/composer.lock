@@ -1329,7 +1329,7 @@
         },
         {
             "name": "symfony/symfony",
-            "version": "v2.4.2",
+            "version": "v2.8.52",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/symfony.git",
