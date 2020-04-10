@@ -1,0 +1,8 @@
+{# empty Twig template #}
+<div id="audiocont" class="movable container" >
+    {%for player in item.getElements()%}
+        <div class="musiccontainer">
+            {{player.description | raw }}
+        </div>
+    {%endfor %}
+</div>

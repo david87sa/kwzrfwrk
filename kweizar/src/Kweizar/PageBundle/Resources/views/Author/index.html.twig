@@ -1,0 +1,185 @@
+{# src/Kweizar/PageBundle/Resources/views/Random/index.html.twig #}
+ {% extends '::base.html.twig' %}
+{% block jquery %}
+    <script type="text/javascript" src="{{ asset('js/jquery-2.1.1.min.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('js/components/authormain.js') }}"></script>
+{% endblock %}
+
+ {% block body %}
+    
+    <h2 class="main_title">Author Page</h2>
+    <div id="main_container">
+        <div id="components" class="container">
+            <ul class="components">
+                <h3>Existing Components</h3>
+                {% for element in elements %}
+                    <li><span>{{element.description}}: {{element.content}}</span>
+                        <a href="{{path('kweizar_page_section_add')}}" class="addsection" component-id="{{element.id}}">Add Section</a>
+                        <a class="delete" href="{{path('kweizar_page_author_delete',{'id':element.id})}}">Remove</a>
+                    {% include "KweizarPageBundle:Author:sectionForm.html.twig" %}    
+                    </li>     
+                {% endfor %}
+            </ul>
+        </div>    
+    </div>
+    <div id="component_form" class="container">
+        <h3>Add Component</h3>
+        {{ form_start(form, {'action': path('kweizar_page_author_add')}) }}
+            {{ form_errors(form) }}
+
+            {{ form_row(form.description) }}
+            {{ form_row(form.content) }}
+        {{ form_end(form) }}
+    </div>
+    {% include 'KweizarPageBundle:Author:sectionTypeForm.html.twig' %}
+    
+    <div id="section_form" class="hidden container">
+        <h3>Add Section</h3>
+        {{ form_start(sectionform, {'action': path('kweizar_page_section_add')}) }}
+            {{ form_errors(sectionform) }}
+            {{ form_row(sectionform.title) }}
+            {{ form_row(sectionform.subTitle) }}
+            {{ form_row(sectionform.sectionType) }}
+        {{ form_end(sectionform) }}
+        
+            <button id="addSectionType">Add Type</button>
+    </div>
+    <div id="element_form" class="hidden container">
+        <h3>Add Element</h3>
+        {{ form_start(elementform, {'action': path('kweizar_page_element_add')}) }}
+            {{ form_errors(elementform) }}
+            {{ form_row(elementform.imgSrc) }}
+            {{ form_row(elementform.title) }}
+            {{ form_row(elementform.description) }}
+            {{ form_row(elementform.destinationType) }}
+            {{ form_row(elementform.destinationContent) }}
+        {{ form_end(elementform) }}
+    </div>
+    <style>
+       h2, h3, span, button, label, i, b, a {
+            font-family: monospace;
+        }
+        .main_title{
+            text-align: center;
+        }
+        .floating_form {
+            display: inline-block;
+            width: 200px;
+            height: 66px;
+            position: absolute;
+        }
+         .hidden{
+            display: none!important;
+        }
+        .container {
+            display: inline-block;
+            margin: 0 auto;
+        }
+        div#main_container {
+            width: 70%;
+            float: right;
+            border: darkgray solid 1px;
+        }
+        label {
+            width: 95px;
+            display: inline-block;
+            height: 25px;
+            text-align: right;
+            margin: 5px;
+        }
+        input,select {
+            height: 25px;
+            width: 250px;
+        }
+        button {
+            height: 32px;
+            width: 121px;
+            float: right;
+        }
+        li {
+            list-style: none;
+        }
+        div#section_form {
+            width: 361px;
+            padding: 10px;
+            border: darkgray solid 2px;
+            height: 158px;
+            background-color: white;
+        }
+        div#element_form {
+            width: 375px;
+            padding: 10px;
+            border: darkgray solid 2px;
+            height: 280px;
+            background-color: white;
+        }
+        span {
+            height: 25px;
+            display: inline-block;
+            font-size: 17px;
+        }
+        a:link {
+            color: #3f3f3f;
+            text-decoration: none;
+            margin: 0 4px;
+            font-style: italic;
+        }
+        a:visited {
+            color: #3f3f3f;
+            text-decoration: none;
+            margin: 0 4px;
+            font-style: italic;
+        }
+        a:hover {
+            color: #3f3f3f;
+            text-decoration: underline;
+            margin: 0 4px;
+            font-style: italic;
+        }
+        div#component_form {
+            float: left;
+            border: darkgrey solid 1px;
+            padding: 10px;
+            margin-bottom: 12px;
+        }
+        div#sectionTypes {
+            float: left;
+            border: darkgrey solid 1px;
+            padding: 10px;
+        }
+        #sectiontype_form button {
+            width: 150px;
+        }
+        i.prefix_title {
+            color: #3f3f3f;
+            margin: 0 5px;
+            font-size: 13px;
+        }
+        div#main_container .container {
+            width: 100%;
+        }
+    </style>
+    <script>
+        
+        $(".addsection").click(function(event){
+            event.preventDefault();
+            url = $(this).attr("href")+"?parentid="+$(this).attr("component-id");
+            position = $(this).position();
+            $("#section_form").removeClass("hidden").addClass("floating_form");
+            $("#section_form").css("right","15px");
+            $("#section_form").css("top",position.top+20);
+            $("#section_form form").attr("action",url);
+        });
+        $(".addelement").click(function(event){
+            event.preventDefault();
+            url = $(this).attr("href")+"?sectionid="+$(this).attr("section-id");
+            position = $(this).position();
+            $("#element_form").removeClass("hidden").addClass("floating_form");
+            $("#element_form").css("right","15px");
+            $("#element_form").css("top",position.top+20);
+            $("#element_form form").attr("action",url);
+        });
+        
+    </script>
+ {% endblock %}
+     

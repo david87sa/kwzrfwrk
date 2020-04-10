@@ -1,0 +1,7 @@
+parameters:
+#    kweizar_page.example.class: Kweizar\PageBundle\Example
+
+services:
+#    kweizar_page.example:
+#        class: %kweizar_page.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]

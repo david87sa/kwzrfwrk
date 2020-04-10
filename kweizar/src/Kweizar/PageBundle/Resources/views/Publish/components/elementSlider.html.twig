@@ -1,0 +1,20 @@
+{# empty Twig template #}
+    	<div id="section{{item.id}}" class="movable container elem{{item.id}}" sectionId="{{item.id}}">
+            <div class="sectionHeader">
+                <div class="sectionTitle">{{item.title | raw}}</div>
+                <div class="sectionSubTitle">{{item.subTitle | raw}}</div>
+            </div>
+            <div class="sectionContent">
+                <div id="newernews" class="newscontrols left"></div>   
+                <div id="newsscrollbarcontainer" class="scrollbar">
+                    <div id="newscont" class="tab sectioncontainer" >    
+                        {% for newsitem in item.getElements()%}
+                                {% include "KweizarPageBundle:Publish/components:element.html.twig" %}
+                        {%endfor%}
+                    </div>
+                </div>
+                <div id="oldernews" class="newscontrols right"></div>
+            </div>
+       </div>
+        
+

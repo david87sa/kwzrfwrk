@@ -1,0 +1,8 @@
+kweizar_store:
+    resource: "@KweizarStoreBundle/Resources/config/routing.yml"
+    prefix:   /
+
+kweizar_page:
+    resource: "@KweizarPageBundle/Resources/config/routing.yml"
+    prefix:   /
+

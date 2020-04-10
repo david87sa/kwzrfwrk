@@ -1,0 +1,16 @@
+{# empty Twig template #}
+
+<div id="element-{{newsitem.id}}" class="element" elementId="{{newsitem.id}}">
+    <div class="image"><img class="imgSrc" src="{{newsitem.imgSrc}}"/></div>
+    <div class="content">
+        <div class="title">{{newsitem.title}}</div>
+        <div class="description">{{newsitem.Description | raw }}</div>
+        <a href="#" class="see_more">See More</a>
+    </div>
+    
+    <div class="link invisible" destinationType="{{newsitem.destinationType}}">
+        {{newsitem.destinationContent|raw}}
+    </div>
+</div>
+        
+

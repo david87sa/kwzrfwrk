@@ -1,0 +1,18 @@
+{# empty Twig template #}
+ {% extends '::base.html.twig' %}
+{% block jquery %}
+    <link href="{{ asset('css/layoutjquery.css') }}" type="text/css" rel="stylesheet" />
+    <link href='http://fonts.googleapis.com/css?family=Megrim' rel='stylesheet' type='text/css'>
+{% endblock %}
+{% block body %}
+<div class="newsElement">
+    <div class="content">
+        <div class="title">{{newsitem.title}}</div>
+        <div class="description">{{newsitem.Description | raw}}</div>
+    </div>
+    <div class="image">
+        <span class="helper"></span>
+        <img src="{{newsitem.imgSrc}}"/>
+    </div>
+</div>
+    {% endblock %} 

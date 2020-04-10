@@ -1,0 +1,63 @@
+kweizar_page_author:
+    pattern: /author
+    defaults: { _controller: KweizarPageBundle:Author:index }
+      
+kweizar_page_author_add:
+    pattern: /author/MainComponent/Add
+    defaults: { _controller: KweizarPageBundle:Author:add }
+    
+kweizar_page_author_delete:
+    pattern: /author/MainComponent/delete/{id}
+    defaults: { _controller: KweizarPageBundle:Author:delete }
+    
+kweizar_page_author_delete_section:
+    pattern: /author/MainComponent/deleteSection/{id}
+    defaults: { _controller: KweizarPageBundle:Author:deleteSection }
+    
+kweizar_page_author_delete_element:
+    pattern: /author/MainComponent/deleteElement/{id}
+    defaults: { _controller: KweizarPageBundle:Author:deleteElement }
+    
+    
+kweizar_page_section_add:
+    pattern: /author/MainComponent/section/add
+    defaults: { _controller: KweizarPageBundle:Author:addSection }
+    
+kweizar_page_element_add:
+    pattern: /author/MainComponent/element/add
+    defaults: { _controller: KweizarPageBundle:Author:addElement }
+    
+kweizar_page_element_edit:
+    pattern: /author/MainComponent/element/edit
+    defaults: { _controller: KweizarPageBundle:Author:editElement }
+
+kweizar_page_author_maintenance:
+    pattern: /author/maintenance
+    defaults: { _controller: KweizarPageBundle:Author:maintenance }
+
+kweizar_page_author_add_sectiontype:
+    pattern: /author/MainComponent/sectiontype/add
+    defaults: { _controller: KweizarPageBundle:Author:addSectionType }
+    
+kweizar_page_author_delete_sectiontype:
+    pattern: /author/MainComponent/sectiontype/delete/{id}
+    defaults: { _controller: KweizarPageBundle:Author:deleteSectionType }
+    
+
+kweizar_page_publish:
+    pattern: /publish
+    defaults: { _controller: KweizarPageBundle:Publish:index }
+    
+kweizar_page_index:
+    pattern: /
+    defaults: { _controller: KweizarPageBundle:Publish:index }
+    
+kweizar_page_publish_news_element:
+    pattern: /newsElement/{id}
+    defaults: { _controller: KweizarPageBundle:Publish:newsElement }
+    
+    
+kweizar_page_contactEmail:
+    pattern: /sendContactEmail
+    defaults: { _controller: KweizarPageBundle:Publish:contactEmail }
+    

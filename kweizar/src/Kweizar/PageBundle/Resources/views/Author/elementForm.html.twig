@@ -1,0 +1,20 @@
+{# this template asumes an object Section is being passed #}
+<div id="elements" class="container">
+    <ul class="elements">
+        {%for currentElement in currentSection.getElements() %}
+            <li>
+                <i class="prefix_title">Element</i>
+                <div>
+                    <span>Image Source: {{ currentElement.imgSrc |truncate(40, true) }}</span>
+                    <span>Title: {{ currentElement.title |truncate(40, true) }}</span>
+                    <span>Description: {{ currentElement.description |truncate(40, true) }}</span>
+                    <span>Destination Type: {{ currentElement.destinationType |truncate(40, true) }}</span>
+                    <span>Destination Content: {{ currentElement.destinationContent |truncate(40, true) }}</span>
+                </div>
+                <a class="delete" href="{{path('kweizar_page_author_delete_element',{'id':currentElement.id})}}">Remove</a>
+            </li>
+        {% endfor %}
+    </ul>
+            
+    
+</div>

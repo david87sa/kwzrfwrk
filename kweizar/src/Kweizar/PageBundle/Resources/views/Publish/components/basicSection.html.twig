@@ -1,0 +1,21 @@
+{# empty Twig template #}
+<div id="section{{item.id}}" class="movable container elem{{item.id}}" sectionId="{{item.id}}">
+    <div class="sectionHeader">
+        <div class="sectionTitle">{{item.title | raw}}</div>
+        <div class="sectionSubTitle">{{item.subTitle | raw}}</div>
+    </div>
+    <div class="sectionContent">   
+                {% for contentElement in item.getElements()%}
+                    <div id="element-{{contentElement.id}}" class="basicElement" elementId="{{contentElement.id}}">    
+                        <div class="content">
+                            <div class="title">{{contentElement.title}}</div>
+                            <div class="description">{{contentElement.Description | raw }}</div>
+                        </div>
+                        <div class="image"><img class="imgSrc" src="{{contentElement.imgSrc}}"/></div>
+
+                    </div>
+                {%endfor%}
+    </div>
+</div>
+        
+

@@ -1,0 +1,37 @@
+<div id="section{{item.id}}" class="contactcont movable container elem{{item.id}}">
+
+    <div class="sectionHeader">
+        <div class="sectionTitle">{{item.title | raw}}</div>
+        <div class="sectionSubTitle">{{item.subTitle | raw}}</div>
+    </div>
+    <div class="sectionContent">  
+        <div id="socialLinksContainer" class="contactColumn">
+            <ul>
+                {%for contact in item.getElements()%}
+                <li>
+                    <a href="{{contact.destinationContent}}">
+                        <img src="{{contact.imgSrc}}">
+                        {{contact.title}}
+                    </a>
+                </li>
+                {% endfor %}
+            </ul>
+        </div>
+        <div id="contactEmailContainer" class="contactColumn">
+            <div class="contactEmailForm">
+                
+                {{ form_start(contactEmailForm, {'action': path('kweizar_page_contactEmail')}) }}
+                    {{ form_errors(contactEmailForm) }}
+                    <div class="header">You can send us an e-mail too:</div>
+                    <div class="result"></div>
+                    <div class="emailRow">{{ form_row(contactEmailForm.subject) }}</div>
+                    <div class="emailRow">{{ form_row(contactEmailForm.email) }}</div>
+                    <div class="emailRow">{{ form_row(contactEmailForm.content) }}</div>
+                {{ form_end(contactEmailForm) }}
+                </form>
+            </div>
+
+        </div>
+    </div>
+                
+</div>

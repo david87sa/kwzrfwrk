@@ -1,0 +1,13 @@
+{# this template asumes an object Section is being passed #}
+<div id="sections" class="container">
+    <ul class="sections">
+        {%for currentSection in element.getSections() %}
+            <li>
+                <i class="prefix_title">Section</i><span>{{currentSection.title}} {{currentSection.sectionType.description}}</span>
+                <a href="{{path('kweizar_page_element_add')}}" class="addelement" section-id="{{currentSection.id}}">Add Element</a>
+                <a class="delete" href="{{path('kweizar_page_author_delete_section',{'id':currentSection.id})}}">Remove</a>
+                {% include 'KweizarPageBundle:Author:elementForm.html.twig' %}
+            </li>
+        {% endfor %}
+    </ul>
+</div>

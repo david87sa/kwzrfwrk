@@ -1,0 +1,18 @@
+{% extends '::base.html.twig' %}
+{% block jquery %}
+    <script type="text/javascript" src="{{ asset('js/jquery-3.4.1.min.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('js/jquery-ui.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('js/components/authormain.js') }}"></script>
+    <link href="{{ asset('css/layoutauthor.css') }}" type="text/css" rel="stylesheet" />
+{% endblock %}
+
+ {% block body %}
+    <div id="section_type_container" class="section_form container">
+    {% include 'KweizarPageBundle:Author:sectionTypeForm.html.twig' %}
+    </div> 
+
+
+<script>
+    AUTHOR.INIT();
+</script>
+ {% endblock %}

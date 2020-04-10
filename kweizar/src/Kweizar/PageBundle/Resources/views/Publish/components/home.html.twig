@@ -1,0 +1,17 @@
+{# empty Twig template #}
+<div id="section{{item.id}}" class="homecontainer container movable elem{{item.id}}">
+    <div id="logo" class="{{item.id}}">
+    </div>
+    <div id="toolbar" class="">
+        <div class="imgleft"></div>
+        <div id="toolbarContent">
+        <img class="nodisplay logosmall" src="../img/kweizarlogo2.png"/>
+            <ul>
+            {%for section in component[0].getSections()%}
+                <li id="elem{{section.id}}" class="toolbarElement">{{section.title}}</li>
+            {% endfor%}
+            </ul>
+        </div>
+        <div class="imgright"></div>
+    </div>
+</div>

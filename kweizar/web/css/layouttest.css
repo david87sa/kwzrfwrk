@@ -1,0 +1,19 @@
+div{
+    border:1px solid #FFF;
+}
+body{
+    background-color: black;
+}
+#verticalcontainer{
+    height: 2800;
+    width: 90%;
+}
+.horizontalcontainer{
+    width: 3200px;
+    height: 650px;
+    
+}
+#section{
+    width: 750px;
+    height: 650px;
+}

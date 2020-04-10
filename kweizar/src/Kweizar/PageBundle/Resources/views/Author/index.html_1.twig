@@ -1,0 +1,36 @@
+{% include "KweizarPageBundle:Publish:index.html.twig" %}  
+
+<div id="add" class="authorbuttons"><img src="/img/icons/list-add.png"></div>
+<div id="editdelete" class="authorbuttons">
+    <div id="edit" ><img src="/img/icons/document-edit.png"></div>
+    <div id="delete"><img src="/img/icons/edit-clear-list.png"></div>
+</div>
+<div id="addeditdelete" class="authorbuttons">
+    <div id="addChild"><img src="/img/icons/list-add.png"></div>
+    <div id="edit" ><img src="/img/icons/document-edit.png"></div>
+    <div id="delete"><img src="/img/icons/edit-clear-list.png"></div>
+</div>
+    <div id="section_form" class="section_form container">
+        <h3>Add Section</h3> 
+        {{ form_start(sectionform, {'action': path('kweizar_page_section_add'),"attr":{"id":"add_section"} }) }}
+            {{ form_errors(sectionform) }}
+            {{ form_row(sectionform.title) }}
+            {{ form_row(sectionform.subTitle) }}
+            {{ form_row(sectionform.sectionType) }}
+        {{ form_end(sectionform) }}
+    </div> 
+    <div id="element_form" class="element_form container">
+        <h3>Add Element</h3>
+        {{ form_start(elementform, {'action': path('kweizar_page_element_add'),"attr":{"id":"add_element"} } ) }}
+            {{ form_errors(elementform) }}
+            {{ form_row(elementform.imgSrc) }}
+            {{ form_row(elementform.title) }}
+            {{ form_row(elementform.description) }}
+            {{ form_row(elementform.destinationType) }}
+            {{ form_row(elementform.destinationContent) }}
+        {{ form_end(elementform) }}
+    </div>
+
+<script>
+    AUTHOR.INIT();
+</script>

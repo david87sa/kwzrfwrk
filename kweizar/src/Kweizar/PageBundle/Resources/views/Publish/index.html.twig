@@ -1,0 +1,46 @@
+{# src/Kweizar/PageBundle/Resources/views/Random/index.html.twig #}
+ {% extends '::base.html.twig' %}
+{% block jquery %}
+    <script type="text/javascript" src="{{ asset('js/jquery-3.4.1.min.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('js/jquery-ui.js') }}"></script>
+    <script src="http://connect.soundcloud.com/sdk.js"></script>
+    <script type="text/javascript" src="{{ asset('js/perfect-scrollbar.min.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('js/jquery.magnific-popup.min.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('js/jquery.waypoints.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('js/components/soundcloudPlayer.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('js/components/main.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('js/components/authormain.js') }}"></script>
+    <link href="{{ asset('css/layoutauthor.css') }}" type="text/css" rel="stylesheet" />
+    <link href="{{ asset('css/layoutjquery.css') }}" type="text/css" rel="stylesheet" />
+    <link href="{{ asset('css/soundcloudPlayer.css') }}" type="text/css" rel="stylesheet" />
+    <link href="{{ asset('css/perfect-scrollbar.min.css') }}" type="text/css" rel="stylesheet" />
+    <link href="{{ asset('css/magnific-popup.css') }}" type="text/css" rel="stylesheet" />
+    <link href='http://fonts.googleapis.com/css?family=Megrim' rel='stylesheet' type='text/css'>
+{% endblock %}
+{% block title %}Kweizar - Melodic Tech Death Metal{% endblock %}
+ {% block body %}
+     <script>
+         
+         Image1= new Image(175,50);
+            Image1.src = "../img/kweizarlogo2.png";
+     </script>
+    <div id="container" containerId="{{component[0].getId()}}">    
+    {% for item in component[0].getSections() %}
+        {% include item.getSectionType().template %}
+    {% endfor %}
+    </div>
+    <div id="playerbox" class="hidden"> <iframe allowtransparency="true" scrolling="no" frameborder="no" src="https://w.soundcloud.com/icon/?url=http%3A%2F%2Fsoundcloud.com%2Fkweizar&color=black_white&size=48" style="width: 48px; height: 48px;float: left;"></iframe>
+            
+        <div class="controls">
+            <div class="back"></div>
+            <div id="playpause"class="pause"></div>
+            <div class="next"></div>
+        </div>
+        <div class="info">
+            <div class="image"></div>
+            <div class="band"></div>
+            <div class="song"></div>
+        </div>
+    </div>
+ {% endblock %}
+     

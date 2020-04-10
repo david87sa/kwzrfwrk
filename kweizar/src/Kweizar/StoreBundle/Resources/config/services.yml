@@ -1,0 +1,7 @@
+parameters:
+#    kweizar_store.example.class: Kweizar\StoreBundle\Example
+
+services:
+#    kweizar_store.example:
+#        class: %kweizar_store.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]

@@ -1,0 +1,21 @@
+{# this template asumes an object Section is being passed #}
+<div id="sectionTypes" class="container">
+    <h3>Add Section Type</h3>
+    <ul class="sections">
+        {%for st in sectionTypes %}
+            <li>
+                <i class="prefix_title">Section Type:</i><span>{{st.description}}</span>
+                <button class="deleteSectionType" sectiontypeid="{{st.id}}" >Delete</button>
+                <span>{{st.content}}</span>
+            </li>
+        {% endfor %}
+    </ul>
+    <div id="sectiontype_form" class="container">
+        {{ form_start(sectionTypeform, {'action': path('kweizar_page_author_add_sectiontype')}) }}
+            {{ form_errors(sectionTypeform) }}
+
+            {{ form_row(sectionTypeform.description) }}
+            {{ form_row(sectionTypeform.content) }}
+        {{ form_end(sectionTypeform) }}
+    </div>
+</div>
