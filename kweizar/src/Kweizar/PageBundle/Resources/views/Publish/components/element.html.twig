@@ -1,7 +1,7 @@
 {# empty Twig template #}
 
 <div id="element-{{newsitem.id}}" class="element" elementId="{{newsitem.id}}">
-    <div class="image"><img class="imgSrc" src="{{newsitem.imgSrc}}"/></div>
+    <div class="image"><img id="{{newsitem.title|replace({' ': ''}) }}" class="imgSrc videoImg" src="{{newsitem.imgSrc}}"/></div>
     <div class="content">
         <div class="title">{{newsitem.title}}</div>
         <div class="description">{{newsitem.Description | raw }}</div>

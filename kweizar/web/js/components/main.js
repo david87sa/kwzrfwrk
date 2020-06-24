@@ -9,6 +9,7 @@
             TIMER: "",
             IS_SCROLLING:false,
             LAST_POSITION:0,
+            IS_MOBILE:false
         },
         handler_document_ready: function () {
             //initialize soundcloud player
@@ -19,10 +20,11 @@
             $("iframe").attr("height",$(window).height()*0.8);
             kwzrPlayer.INIT();
             kwzr.GLOBALS.CURRENT_SECTION=$("#container").children().first().attr("id");
-            $('#logo').css("left",($(window).width()/2)-($("#logo").width()/2)+15);
-            $('#logo').css("top",($(window).height()/2)-($("#logo").height()/2)-250);
-            $(".homecontainer").css("height",$(window).height());
-            $(".container").css("height",$(window).height());
+            //$('#logo').css("left",($(window).width()/2)-($("#logo").width()/2)+15);
+            //$('#logo').css("top",($(window).height()/2)-($("#logo").height()/2)-250);
+            //$(".homecontainer").css("height",$(window).height());
+            //$(".container").css("height",$(window).height());
+            $("#contactImage").attr("src","img/newer/FotoBandaMedios.png");
             $(".sectioncontainer").each(function(){
                     $(this).css("width",($(".element").width()+340)*$(this).children().length);
             });
@@ -32,16 +34,30 @@
             $("#container").fadeIn(1500,function(){
                 $('#logo').animate({
                     opacity: 1,
-                    top:($(window).height()/2)-($("#logo").height()/2)-70,
+                    top:"15vh",
                 }, {
                     duration: 1500,
                     queue: false,
                     specialEasing:{top:"easeOutCubic",opacity:"easeInQuint"},
                     complete: function () {
                         kwzr.crearToolbar(1);
+                        $('.promo').animate({
+                            opacity: 1
+                        }, {
+                            duration: 1500,
+                            queue: false,
+                            specialEasing:{top:"easeOutCubic",opacity:"easeInQuint"}
+                        });
+                        $('#listento').animate({
+                            opacity:1
+                        },{
+                            duration:1500,
+                            queue: false
+                        });
 
                     }
                 });
+                
             });
 
             $(".element").click(function(){
@@ -62,7 +78,7 @@
                     info = $(element).find(".link.invisible");
                     type = info.attr("destinationtype");
                     if (type=="iframe"){
-                        info= info.html();
+                        info= info.html().trim();
                     }
                     
                     items[index]={
@@ -94,7 +110,6 @@
                     kwzr.scrollNews("right");
                 }
             });
-            $(window).scroll(kwzr.goToNearestSection);
             $(document).keydown(function(event){
                 if (event.keyCode=="38"||event.keyCode=="40"){
                     kwzr.goToNearestSection(event);
@@ -124,8 +139,9 @@
                             $("#contactEmailContainer  .result").html("There was an error sending the email");
                         }
                     },
-                    error:function(){
+                    error:function(request){
                         $("#contactEmailContainer  .result").html("There was an error sending the email");
+                        console.log(request.responseText);
                     }
                     });
                 return false;
@@ -139,6 +155,8 @@
                     $("#toolbar").css("top", "0");
                     $(".logosmall").removeClass("nodisplay");
                     $("#toolbarContent").addClass("stuck");
+                    
+                    $("#listento").addClass("listentotop");
                 }
                 if($(window).scrollTop()<=$(window).height()*0.85){
                     $("#toolbar").css("top", "85%");
@@ -146,6 +164,8 @@
                     $("#toolbar").removeClass("toptoolbar");
                     $(".logosmall").addClass("nodisplay");
                     $("#toolbarContent").removeClass("stuck");
+                    
+                    $("#listento").removeClass("listentotop");
                 }
                 //heightLeft = ($(window).height()-($(window).width()/1280*720))/2*-1;
                 //$(".homecontainer").css("background-position","center "+(($(window).scrollTop()-heightLeft)*1.3)+"px");
@@ -161,7 +181,7 @@
                     $(this.element).find(".element").each(function(index,element){
                         $(element).animate({margin:"0 20px",opacity:1},500,function(){});
                     });
-                    $(this.element).find(".sectioncontainer").width(($(".element").width()+40)*$(this.element).find(".element").length);
+                    $(this.element).find(".sectioncontainer").width(($(".element").width()+40)*300);
                     wayElement = this.element;
                     $(".toolbarElement").each(function(){
                         if ($(wayElement).hasClass($(this).attr("id"))){
@@ -171,7 +191,13 @@
                 },{offset:"50%"});
                 
             });
-            $(".scrollbar").perfectScrollbar();
+            if (!kwzr.GLOBALS.IS_MOBILE){
+                $(".scrollbar").perfectScrollbar({suppressScrollY:true});
+                $(window).scroll(kwzr.goToNearestSection);
+            }else{
+                $("#element-1 .image img").attr("src","img/newer/shirtsmockupmobile.png");
+                $("#section1").append('<div class="promo">Human convergence<br>Available Now!</div>');
+            }
         },
         goToNearestSection:function(e){
             if ($(".mfp-wrap").lenght>0)
@@ -305,6 +331,9 @@
 
     };
     $(window).on('load',function () {
+        if (/Mobi|Android/i.test(navigator.userAgent)) {
+            kwzr.GLOBALS.IS_MOBILE = true;
+        }
         kwzr.handler_document_ready();
     });
 })(mjq);

@@ -51,6 +51,7 @@ a:hover {
 .container {
   background-image: url(../img/kweizarbkground.png);
   position: relative;
+  height:100vh;
 }
 .hidden{
     width: 100%;
@@ -60,7 +61,6 @@ a:hover {
 }
 .homecontainer{
   width: 100%;
-  height: 100%;
   background-color: #000;
   background-image: url(../img/newer/backlight.jpg);
   background-repeat: no-repeat;
@@ -135,19 +135,17 @@ a:hover {
 #videocont{
     height:85%;
 }
-.contactcont{
-    height:85%;
-}
 #logo{
-  width: 500px;
-  height: 500px;
+  width: 36vw;
+  height: 36vw;
     margin:0 auto;
     opacity:0;
     background-image:url('../img/newer/portadalogo.jpg');
     background-size:100% 100%;
     background-repeat:no-repeat;
     position: absolute;
-    top:130px;
+    left:32vw;
+    top:-10vw
 }
 
 #toolbar {
@@ -274,7 +272,6 @@ div#elements {
   padding: 20px 20px 0 100px;
 }
 .sectionSubTitle {
-  //font-family: valium;
   color: #E5E4EB;
   font-size: 25px;
   padding: 0 0 20px 100px;
@@ -360,9 +357,11 @@ div#elements {
 
 }
 .contactColumn{
-  width: 40%;
-  display: inline-block;
-  float: left;
+    width: 23vw;
+    display: inline-block;
+    float: left;
+    position: absolute;
+    left: 63vw;
 }
 #contactEmailContainer label {
   display: block;
@@ -395,6 +394,12 @@ div#socialLinksContainer {
 #contactEmailContainer .result {
   font-size: 15px;
   color: royalblue;
+}
+#contactImage {
+    width: 50vw;
+    height: 45vw;
+    position: absolute;
+    bottom: 0vh;
 }
 
 /******************************news element*******************/
@@ -444,7 +449,66 @@ iframe {
   max-height: 100%;
   vertical-align: middle;
 }
-
+#section5 .content{
+    height: 50vh
+}
+#section5 #destination_content {
+    position: absolute;
+    top: 22vh;
+}
+#section5 #networks img {
+    width: 15vw;
+    margin: 1vw;
+}
+#section5 #networks div {
+    float: left;
+    width: 20vw;
+    height: 20vh;
+}
+#section5 #networks {
+    width: 60vw;
+    margin: 10vh 22vw;
+    height: 43vh;
+}
+#instagram img {
+    height: 10vh;
+    width: 21vh!important;
+    margin: 1vw !important;
+}
+#facebook img {
+    margin: 2vw 0vw 1vw 0vw!important;
+}
+#section5 .image {
+    display: none;
+}
+#section5 .title {
+    display: none;
+}
+/*****  streaming links*****/
+#listento{
+    width: 105px;
+    position: fixed;
+    top: 10vh;
+    right: 10vw;
+    background-color: #000000;
+    opacity: 0;
+}
+#listento img {
+    width: 64px;
+    margin: 3vh;
+}
+.listentotop{
+    top: 0vh!important;
+    right: 0vw!important;
+    width: 550px!important;
+}
+.listentotop img {
+    margin: 1vh 2vw!important;
+    width: 26px!important;
+}
+.listentotop div {
+    float:left;
+}
 /********************author **********************/
 .authorbuttons img {
     width: 22px;
@@ -468,6 +532,7 @@ iframe {
 }
 .invisible{
     visibility: hidden;
+    height: 0px;
 }
 
 #section2 #element-1 .content {
@@ -475,9 +540,156 @@ iframe {
 }
 
 
-#section2 #element-1  .image {
-    width: 800px;
-    margin: 0 auto;
+#section2 #element-1 .image {
+    width: 100vw;
     text-align: center;
-    max-height: 500px;
+    max-height: 70vh!important;
+}
+@media only screen and (max-width: 800px) {
+/* layout for mobile*/
+
+    .homecontainer {
+        background-size: cover!important;
+    }
+    #logo {
+        width: 80vw;
+        height: 80vw;
+        left:10vw;
+    }
+    #toolbar {
+        display: none;
+    }
+    .sectionTitle{
+        padding: 0 10vw;
+    }
+    .sectionSubTitle{
+        padding: 0 10vw;
+    }
+    #section3 #newscont {
+    width: 90vw!important;
+    }
+    #section3 .element {
+    width: 80vw;
+    margin: 0px 19vw!important;
+    }
+    #section3 .newscontrols {
+        display: none;
+    }
+    #section3 .sectionHeader {
+        height: 18vh;
+    }
+    #section3 .sectionContent {
+        height: 82vh;
+    }
+    #section3 .content {
+        display: none;
+    }
+    #section3 .image img{
+        height :35vw;
+    }
+    #section2 #element-1 .image {
+        max-height: 100%;
+        width: 100vw;
+    }
+    #section2 .sectionHeader {
+        height: 25vh;
+    }
+    #section2 .sectionContent {
+        height: 70vh;
+    }
+    #section2 .image img {
+        height: 65vh;
+        margin: 0 2vw;
+    }
+    #section4 #contactEmailContainer .header {
+        font-size: 40px;
+    }
+    #section4 .contactEmailForm {
+        width: 90vw;
+        z-index: 1;
+        position: absolute;
+        font-size: 30px;
+        left: 10vw;
+    }
+    #section4 .contactColumn{
+        left: 0vw;
+    }
+    #section4 #contactImage{
+        position: absolute;
+        left: 0;
+        bottom: -13vh;
+        z-index: 0;
+        width: 100vw;
+        height: 90vw;
+    }
+    #section4 #contactEmailContainer label {
+        width: 200px;
+        display: inline-block;
+        height: 4vh;
+    }
+    #section4 #contactEmailContainer input {
+        margin: 10px;
+        height: 25px;
+        width:80vw;
+    }
+    #section4 #contactEmailContainer textarea {
+        margin: 10px;
+        height: 65px;
+        width:80vw;
+    }
+    #section4 #contactEmailContainer button[type="submit"] {
+        width: 304px;
+        margin-top: 10px;
+        height: 25px;
+        background-color: white;
+        font-size: 5vw;
+    }
+    #section4 .sectionHeader {
+        height: 38vw;
+    }
+    #section5 #networks {
+        background-color: lightgray;
+        width: 60vw;
+        margin: 10vh 20vw;
+        text-align: center;
+        height: 60vh;
+    }
+    #section5 #networks div {
+        float: none;
+        width: 60vw;
+        height: 10vh;
+    }
+    #section5 #facebook {
+        height: 7vh!important;
+        padding-top: 2vh;
+    }
+    #section5 .content {
+        display:none;
+    }
+    #section5 #element-6 .image img {
+        display: none;
+    }
+    #section5 #networks img {
+        width: 33vw;
+        margin: 4vw;
+    }
+    #section5 .sectionHeader {
+        height: 38vw;
+    }
+    #section5 #instagram img {
+        height: 50px;
+        width: 115px!important;
+    }
+    #section5 #applemusic img {
+        margin: 4vw;
+    }
+    .promo {
+        opacity: 0;
+        color: white;
+        position: absolute;
+        top: 60vh;
+        left: 5vw;
+        font-size: 13vw;
+        text-align: center;
+    }
 }

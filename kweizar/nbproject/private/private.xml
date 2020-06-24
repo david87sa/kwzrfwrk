@@ -3,25 +3,9 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/Users/david.salas/NetBeansProjects/kweizar/src/Kweizar/PageBundle/Resources/views/Publish/components/elementSlider.html.twig</file>
-            <file>file:/Users/david.salas/NetBeansProjects/kweizar/web/js/components/main.js</file>
-            <file>file:/Users/david.salas/NetBeansProjects/kweizar/src/Kweizar/StoreBundle/Entity/Element.php</file>
-            <file>file:/Users/david.salas/NetBeansProjects/kweizar/src/Kweizar/PageBundle/Controller/AuthorController.php</file>
-            <file>file:/Users/david.salas/NetBeansProjects/kweizar/src/Kweizar/PageBundle/KweizarPageBundle.php</file>
-            <file>file:/Users/david.salas/NetBeansProjects/kweizar/src/Kweizar/StoreBundle/Entity/MainComponentRepository.php</file>
-            <file>file:/Users/david.salas/NetBeansProjects/kweizar/src/Kweizar/PageBundle/Resources/views/Publish/index.html.twig</file>
-            <file>file:/Users/david.salas/NetBeansProjects/kweizar/src/Kweizar/PageBundle/Resources/views/Author/index.html.twig</file>
-            <file>file:/Users/david.salas/NetBeansProjects/kweizar/web/css/layoutauthor.css</file>
-            <file>file:/Users/david.salas/NetBeansProjects/kweizar/web/js/components/soundcloudPlayer.js</file>
-            <file>file:/Users/david.salas/NetBeansProjects/kweizar/src/Kweizar/PageBundle/Resources/views/Default/index.html.twig</file>
-            <file>file:/Users/david.salas/NetBeansProjects/kweizar/app/Resources/views/base.html.twig</file>
-            <file>file:/Users/david.salas/NetBeansProjects/kweizar/src/Kweizar/PageBundle/Resources/config/routing.yml</file>
-            <file>file:/Users/david.salas/NetBeansProjects/kweizar/web/js/components/authormain.js</file>
-            <file>file:/Users/david.salas/NetBeansProjects/kweizar/src/Kweizar/StoreBundle/Entity/MainComponent.php</file>
-            <file>file:/Users/david.salas/NetBeansProjects/kweizar/src/Kweizar/PageBundle/Resources/views/Publish/components/soundcloud.html.twig</file>
-            <file>file:/Users/david.salas/NetBeansProjects/kweizar/src/Kweizar/StoreBundle/Controller/DefaultController.php</file>
-            <file>file:/Users/david.salas/NetBeansProjects/kweizar/src/Kweizar/PageBundle/Resources/views/Publish/components/element.html.twig</file>
-            <file>file:/Users/david.salas/NetBeansProjects/kweizar/src/Kweizar/PageBundle/Resources/views/Author/index.html_1.twig</file>
+            <file>file:/Users/david.salas/Documents/github/kwzrfwrk/kweizar/src/Kweizar/PageBundle/Resources/views/Publish/index.html.twig</file>
+            <file>file:/Users/david.salas/Documents/github/kwzrfwrk/kweizar/web/css/layoutjquery.css</file>
+            <file>file:/Users/david.salas/Documents/github/kwzrfwrk/kweizar/app/Resources/views/base.html.twig</file>
         </group>
     </open-files>
 </project-private>
